@@ -1,3 +1,7 @@
 define('sql_engine/Pattern', [], function(){
-   return {}
+   var Pattern = function (execFn){
+      this.exec = execFn;
+   };
+
+   return Pattern
 });

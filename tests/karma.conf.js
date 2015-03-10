@@ -65,7 +65,6 @@ module.exports = function(config) {
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
-
     coffeePreprocessor: {
       // options passed to the coffee compiler
       options: {

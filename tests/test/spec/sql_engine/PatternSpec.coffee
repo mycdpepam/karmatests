@@ -1,9 +1,13 @@
-define  (require) ->
-  console.log('aaaa')
+define (require) ->
+
   Pattern = require 'sql_engine/Pattern'
-#  console.log('qqq')
+
   describe "Test", ->
     it "should work", ->
       expect(true).toBe(true)
-        #expect(Pattern).toBeDefined()
+
+    it 'should be defined', ->
+      expect(Pattern).toBeDefined()
+
+
 
