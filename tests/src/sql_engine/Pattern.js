@@ -7,5 +7,11 @@ define('sql_engine/Pattern', [], function(){
       this.exec = execFn;
    };
 
+   Pattern.prototype = {
+      constructor : Pattern,
+      when        : function(func){
+         return new Pattern(func)
+      }
+   };
    return Pattern
 });
