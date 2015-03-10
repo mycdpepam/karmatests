@@ -10,7 +10,9 @@ define('sql_engine/Pattern', [], function(){
    Pattern.prototype = {
       constructor : Pattern,
       when        : function(func){
-         return new Pattern(func)
+         return new Pattern( function (str, pos){
+
+         })
       }
    };
    return Pattern
