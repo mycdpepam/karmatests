@@ -33,7 +33,7 @@ define (require) ->
       pattern = new Pattern(fn)
       expect(pattern.when).toEqual jasmine.any Function
 
-    it 'prototype field "when" should be a function', ->
+    it 'prototype field "when" should be a instance of Pattern', ->
       pattern = new Pattern((str,pos)->)
-      toClass ={}.toString
       expect(pattern.when((str,pos)->) instanceof Pattern)
+

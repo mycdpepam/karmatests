@@ -10,6 +10,7 @@
     "url": "https://Andrii_Pidhirnyi@bitbucket.org/Andrii_Pidhirnyi/d2-training.git"
   },
   "devDependencies": {
+    "coffee-script": "^1.9.1",
     "gulp": "^3.8.11",
     "gulp-connect": "^2.2.0",
     "karma": "^0.12.31",

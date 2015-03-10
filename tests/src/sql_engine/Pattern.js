@@ -9,10 +9,14 @@ define('sql_engine/Pattern', [], function(){
 
    Pattern.prototype = {
       constructor : Pattern,
-      when        : function(func){
+      when        : function(transformedFn){
          return new Pattern( function (str, pos){
-
-         })
+            var result = this.exec(str, pos || 0);
+            return result && {
+                   res: transformedFn(result.res),
+                   end: result.end
+                }
+         }.bind(this))
       }
    };
    return Pattern
