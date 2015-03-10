@@ -9,5 +9,12 @@ define (require) ->
     it 'should be defined', ->
       expect(Pattern).toBeDefined()
 
+    it 'should be a error', ->
+      obj = {}
+      expect(-> new Pattern(obj)).toThrowError(/^incorrect.+input/)
+
+    it 'should be correcr input parametr', ->
+      func = () ->
+      expect(-> new Pattern(func)).toBeTruthy()
 
 
