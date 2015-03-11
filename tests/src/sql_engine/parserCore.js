@@ -22,6 +22,10 @@ define('sql_engine/parserCore', ['sql_engine/Pattern'], function(Pattern){
             return new Pattern(function(str, pos){
 
             })
-        }
+        },
+
+       exc: function(){
+
+       }
     }
 });

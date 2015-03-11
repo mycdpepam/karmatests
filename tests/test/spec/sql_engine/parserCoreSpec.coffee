@@ -3,7 +3,7 @@ define (require) ->
     parser = require 'sql_engine/parserCore'
 
     describe 'testing "txt" pattern', ->
-      it '"txt" pattern should be', ->
+      it '"txt" pattern should be Defined', ->
         expect(parser.txt).toBeDefined()
 
       it '"txt" pattern should be a function', ->
@@ -15,7 +15,7 @@ define (require) ->
 
 
     describe 'testing "rgx" pattern' , ->
-      it '"rgx" pattern should be', ->
+      it '"rgx" pattern should be Defined', ->
         expect(parser.rgx).toBeDefined()
 
       it '"rgx" pattern should be a function', ->
@@ -27,7 +27,7 @@ define (require) ->
 
 
     describe 'testing "opt" pattern' , ->
-       it '"opt" pattern should be', ->
+       it '"opt" pattern should be Defined', ->
          expect(parser.opt).toBeDefined()
 
        it '"opt" pattern should be a function', ->
@@ -36,3 +36,17 @@ define (require) ->
        it '"opt" pattern should return new instance of Pattern', ->
          opt = new parser.opt((opt)->)
          expect(opt instanceof ParserPattern).toBeTruthy()
+
+    describe 'testing "exc" pattern' , ->
+      it '"exc" pattern should be Defined', ->
+        expect(parser.exc).toBeDefined()
+
+      it '"exc" pattern should be a function', ->
+        expect(parser.exc).toEqual jasmine.any Function
+
+      it '"exc" pattern should return new instance of Pattern', ->
+        console.log(parser.exc (()->))
+        expect(new parser.exc (->) instanceof  ParserPattern).toBeTruthy()
+
+
+#exc: any:  seq:   rep:
