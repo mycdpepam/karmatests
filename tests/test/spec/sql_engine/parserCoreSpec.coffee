@@ -21,14 +21,6 @@ define (require) ->
       it '"rgx" pattern should be a function', ->
         expect(parser.txt).toEqual(jasmine.any(Function))
 
-      it '"rgx" pattern should return new instance of Pattern', ->
-        rgx = new parser.rgx((rgx) ->)
-        expect(rgx instanceof ParserPattern).toBeTruthy()
-
-      it '"rgx" pattern should trow Error when input data is not correct', ->
-        toClass ={}.toString
-        regExp = /a/
-        rgx = new parser.rgx(regExp)
 
     describe 'testing "opt" pattern' , ->
        it '"opt" pattern should be Defined', ->
@@ -41,6 +33,7 @@ define (require) ->
          opt = new parser.opt((opt)->)
          expect(opt instanceof ParserPattern).toBeTruthy()
 
+
     describe 'testing "exc" pattern' , ->
       it '"exc" pattern should be Defined', ->
         expect(parser.exc).toBeDefined()
@@ -48,8 +41,26 @@ define (require) ->
       it '"exc" pattern should be a function', ->
         expect(parser.exc).toEqual jasmine.any Function
 
-      it '"exc" pattern should return new instance of Pattern', ->
-        expect(new parser.exc (->) instanceof  ParserPattern).toBeTruthy()
+
+    describe 'testing "any" pattern' , ->
+      it '"any" pattern should be Defined', ->
+        expect(parser.any).toBeDefined()
+
+      it '"any" pattern should be a function', ->
+        expect(parser.any).toEqual jasmine.any Function
 
 
-#exc: any:  seq:   rep:
+    describe 'testing "seq" pattern' , ->
+      it '"seq" pattern should be Defined', ->
+        expect(parser.seq).toBeDefined()
+
+      it '"seq" pattern should be a function', ->
+        expect(parser.seq).toEqual jasmine.any Function
+
+    describe 'testing "rep" pattern' , ->
+      it '"seq" pattern should be Defined', ->
+        expect(parser.rep).toBeDefined()
+
+      it '"seq" pattern should be a function', ->
+        expect(parser.rep).toEqual jasmine.any Function
+
