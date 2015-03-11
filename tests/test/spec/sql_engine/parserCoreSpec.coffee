@@ -25,6 +25,10 @@ define (require) ->
         rgx = new parser.rgx((rgx) ->)
         expect(rgx instanceof ParserPattern).toBeTruthy()
 
+      it '"rgx" pattern should trow Error when input data is not correct', ->
+        toClass ={}.toString
+        regExp = /a/
+        rgx = new parser.rgx(regExp)
 
     describe 'testing "opt" pattern' , ->
        it '"opt" pattern should be Defined', ->
@@ -45,7 +49,6 @@ define (require) ->
         expect(parser.exc).toEqual jasmine.any Function
 
       it '"exc" pattern should return new instance of Pattern', ->
-        console.log(parser.exc (()->))
         expect(new parser.exc (->) instanceof  ParserPattern).toBeTruthy()
 
 

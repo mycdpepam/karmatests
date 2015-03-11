@@ -1,4 +1,7 @@
 define('sql_engine/parserCore', ['sql_engine/Pattern'], function(Pattern){
+   'use strict';
+
+    var toClass ={}.toString;
 
     return {
         txt: function(text){
@@ -13,8 +16,18 @@ define('sql_engine/parserCore', ['sql_engine/Pattern'], function(Pattern){
         },
 
         rgx: function(regexp){
+            //if(toClass.call(regexp)).slice(8, -1))
+            var inputParam = (toClass.call(regexp)).slice(8, -1);
+            console.log(inputParam)
             return new Pattern(function(str, pos){
-
+                var result = regexp.exec(str.slice(pos))
+                if(result){
+                    return {
+                        res: '',
+                        end: ''
+                    }
+                }
+                throw new Error ('incorrect input paramentrs')
             })
         },
 
