@@ -19,7 +19,12 @@ define (require) ->
         expect(parser.rgx).toBeDefined()
 
       it '"rgx" pattern should be a function', ->
-        expect(parser.txt).toEqual(jasmine.any(Function))
+        expect(parser.rgx).toEqual(jasmine.any(Function))
+
+      it 'to be error ', ->
+        expect(() =>
+          parser.rgx 'aaa').toThrowError()
+
 
 
     describe 'testing "opt" pattern' , ->
@@ -40,6 +45,8 @@ define (require) ->
 
       it '"exc" pattern should be a function', ->
         expect(parser.exc).toEqual jasmine.any Function
+
+
 
 
     describe 'testing "any" pattern' , ->

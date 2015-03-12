@@ -16,15 +16,20 @@ define('sql_engine/parserCore', ['sql_engine/Pattern'], function(Pattern){
         },
 
         rgx: function(regexp){
-            return new Pattern(function(str, pos){
-                var result = regexp.exec(str.slice(pos));
-                if(result){
-                    return {
-                        res: '',
-                        end: ''
+            if(toClass.call(regexp).slice(8, -1) == 'RegExp'){
+                return new Pattern(function(str, pos){
+                    var result = regexp.exec(str.slice(pos));
+                    if(result){
+                        return {
+                            res: '',
+                            end: ''
+                        }
                     }
-                }
-            })
+                })
+            }else{
+                throw new Error ('incorrect value')
+            }
+
         },
 
         opt: function(pattern){
